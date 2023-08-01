@@ -1,0 +1,538 @@
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+
+    #sbs-317 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+    
+        .cs-topper {
+            font-size: var(--topperFontSize);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: inherit;
+            letter-spacing: .1em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: (4/16rem);
+            display: block;
+        }
+    
+        .cs-title {
+            font-size: var(--headerFontSize);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: (700/16rem);
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+    
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            max-width: (650/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-text {
+            /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+        
+        .cs-picture {
+            /* set font size to scale with view width, stopping at 68% the value of em */
+            font-size:~"min(2.16vw, .68em)";
+            width: (520/16em);
+            height: (680/16em);
+            /* margin top and bottom to match the exact amount the grey square overflows the parent for consistent spacing */
+            margin: (48/16em) 0;
+            position: relative;
+            display: block;
+            &:before {
+                /* grey box */
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: var(--primaryLight);
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                transform: rotate(15deg);
+            }
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-317 {
+        .cs-container {
+            max-width: (1280/16rem);
+            /* set to horizontal arrangement */
+            flex-direction: row;
+            justify-content: center;
+            /* 77px - 160px */
+            gap: clamp(4.8125rem, 10vw + 1rem, 10rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        .cs-picture {
+            font-size:~"min(1.1vw, 1em)";
+            margin: (56/16em) 0 (56/16em) (80/16em);
+            /* prevent flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-circles {
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .cs-ring-wrapper {
+            /* breaks the children out of the container.  They can now be arranged as if thy are all children of the cs-circle */
+            display: contents;
+        }
+
+        .cs-ring {
+            /* make the ring position absolute so it can sit on top of the other elements that are centered relatively in the cs-circle */
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .cs-number {
+            /* make the number relative positioning so it and the cs-desc can position themselves around each other */
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+        }
+
+        .cs-desc {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            transform: none;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #sbs-317 {
+			background: var(--medium);
+            
+
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title, .cs-text, .cs-call, .cs-number, .cs-desc {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text {
+                opacity: .8;
+            }
+
+            .cs-button-solid {
+                background-color: var(--primary);
+                color: #fff;
+                &:before {
+                    background-color: var(--primary);
+                }
+            }
+
+            .cs-ring circle {
+                stroke: var(--accent);
+            }
+
+            .cs-ring circle:last-of-type {
+                stroke: var(--secondaryLight);
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+
+    #stats-471 {
+        padding: var(--sectionPadding);
+        background-color: var(--secondary);
+        /* clips the glowing orbs from causing overflow issues when they overflow the container */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:before, &:after {
+            /* glowing orbs */
+            content: '';
+            width: (453/16rem);
+            height: (333/16rem);
+            background: #F1F1F4;
+            opacity: 0.16;
+            -webkit-filter: blur(182px);
+            filter: blur(182px);
+            position: absolute;
+            display: block;
+            top: (-66/16rem);
+            left: (-227/16rem);
+            z-index: -1;
+        }
+
+        &:after {
+            display: none;
+        }
+        
+        .cs-container {
+            width: 100%;
+            max-width: (955/16rem);
+            margin: auto;
+        }
+    
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: (60/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 47%;
+            max-width: (240/16rem);
+            margin: 0;
+            padding: 0 (12/16rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-icon {
+            /* 50px - 76px */
+            width: clamp(3.125rem, 6vw, 4.75rem);
+            height: auto;
+            margin: 0 0 (20/16rem);
+            display: block;
+        }
+
+        .cs-number {
+            /* 31px - 61px */
+            font-size: clamp(1.9375rem, 4.3vw, 3.8125rem);
+            line-height: 1.2em;
+            text-align: center;
+            font-weight: 400;
+            margin: 0 0 (4/16rem) 0;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-desc {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            color: var(--bodyTextColorWhite);
+        }
+    }
+
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #stats-471 {
+        &:after {
+            display: block;
+            left: auto;
+            top: (57/16rem);
+            right: (-281/16rem);
+        }
+
+        .cs-card-group {
+            justify-content: space-between;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---       Meet The Team        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+
+    #meet-team-1140 {
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+        font-family: 'Roboto', 'Arial', sans-serif;
+        padding: var(--sectionPadding);
+        overflow: hidden;
+        
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+    
+        .cs-title {
+            font-size: var(--headerFontSize);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: (700/16rem);
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+
+        .cs-topper {
+            /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+            color: var(--primary);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.3vw, 1.25rem);
+            position: relative;
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+
+            &:hover {
+                .cs-picture {
+                    &:before, &:after {
+                        opacity: 1;
+                    }
+
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: auto;
+            margin: 0 0 (8/16rem) 0;
+            /* removed at tablet */
+            aspect-ratio: (328/407);
+            /* clips the img corners */
+            overflow: hidden;
+            /* clips img tag from overflowing it on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* makes sure the top of the image is at the top of the parent, heads won't get cut off this way */
+                object-position: top;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: transform .7s;
+            }
+        }
+
+        .cs-info {
+            width: 90%;
+            margin: (-42/16rem) 0 0;
+            padding: (16/16rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            background-color: #F7F7F7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            transition: background-color .3s;
+        }
+
+        .cs-name {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (4/16rem) 0;
+            color: var(--headerColor);
+            display: block;
+            transition: color .3s;
+        }
+
+        .cs-job {
+            /* 14px - 16px */
+            font-size: clamp(.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            margin-right: 0;
+            color: var(--bodyTextColor);
+            display: block;
+            transition: color .3s;
+        }
+    }
+
+}
+
+/* Tablet - 550px */
+@media only screen and (min-width: 34.375rem) {
+    #meet-team-1140 {
+        .cs-content {
+            text-align: left;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-card-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .cs-item {
+            width: 48.3%;
+        }
+
+        .cs-picture {
+            height: (407/16rem);
+            /* remove the aspect ratio so the height can be squished */
+            aspect-ratio: initial;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #meet-team-1140 {
+        .cs-card-group {
+            justify-content: center;
+        }
+
+        .cs-item {
+            width: 22.7vw;
+            max-width: (305/16rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #meet-team-1140 {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title, .cs-name, .cs-job {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-job {
+                opacity: .8;
+            }
+
+            .cs-info {
+                background-color: var(--medium);
+            }
+        }
+    }
+}
+                                
+                                
