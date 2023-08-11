@@ -2,7 +2,7 @@
 
 
 /*-- -------------------------- -->
-<---        Why Choose          -->
+<---        Services            -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -89,7 +89,7 @@
             width: 100%;
             margin: 0;
             padding: (32/16rem);
-            background-color: #FDFBF9;
+            background-color: #FAF9F6;
             /* clips image corners */
             overflow: hidden;
             /* prevents padding from adding to height and width */
@@ -106,11 +106,6 @@
                     img {
                         transform: scale(1.1);
                     }
-                }
-
-                .cs-icon {
-                    /* turns it white */
-                    filter: grayscale(1) brightness(1000%);
                 }
 
                 .cs-h3, .cs-item-text {
@@ -231,11 +226,6 @@
                     background-color: var(--primary);
                 }
             }
-
-            .cs-icon {
-                /* turns it white */
-                filter: grayscale(1) brightness(1000%);
-            }
         }
     }
 }
@@ -250,7 +240,7 @@
 
     #why-choose-223 {
         padding: var(--sectionPadding);
-        background-color: #FDFBF9;
+        background-color: #FAF9F6;
 
         .cs-container {
             width: 100%;
@@ -335,7 +325,7 @@
             /* 32px - 44px top & bottom, 24px - 32px left & right */
             padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 2rem);
             margin: 0;
-            border: 1px solid #ded9d0;
+            border: 1px solid var(--primary);
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -591,33 +581,7 @@
             flex: none;
         }
 
-        .cs-circles {
-            max-width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .cs-ring-wrapper {
-            /* breaks the children out of the container.  They can now be arranged as if thy are all children of the cs-circle */
-            display: contents;
-        }
-
-        .cs-ring {
-            /* make the ring position absolute so it can sit on top of the other elements that are centered relatively in the cs-circle */
-            width: 100%;
-            height: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .cs-number {
-            /* make the number relative positioning so it and the cs-desc can position themselves around each other */
-            position: relative;
-            top: auto;
-            left: auto;
-            transform: none;
-        }
+       
 
         .cs-desc {
             position: relative;
@@ -651,7 +615,7 @@
                 background-color: var(--primary);
                 color: #fff;
                 &:before {
-                    background-color: var(--primary);
+                    background-color: var(--primaryLight);
                 }
             }
 
@@ -675,7 +639,7 @@
 
     #services-1064 {
         padding: var(--sectionPadding);
-		background: #FDFBF9;
+		background: #FAF9F6;
         
         .cs-container {
             width: 100%;
@@ -752,7 +716,7 @@
             margin:0;
             /* 24px - 32px */
             padding: clamp(1.5rem, 3vw, 2rem);
-            background-color: #FDFBF9;
+            background-color: #FAF9F6;
             box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
             /* prevents padding from affecting height and width */
             box-sizing: border-box;
@@ -1067,7 +1031,7 @@
     #faq-708 {
         position: relative;
         overflow: hidden;
-		background: #FDFBF9;
+		background: #FAF9F6;
         
         .cs-container {
             width: 100%;
@@ -1477,7 +1441,7 @@
             padding: (16/16rem);
             /* prevents padding from affecting height and width */
             box-sizing: border-box;
-            background-color: #FDFBF9;
+            background-color: #FAF9F6;
             border-radius: (0/16rem);
             display: flex;
             flex-direction: column;
@@ -1681,7 +1645,7 @@
             padding: clamp(2rem, 7vw, 3rem) clamp(1rem, 4vw, 2rem);
             /* makes padding not affect height and width */
             box-sizing: border-box;
-            background-color: #FDFBF9;
+            background-color: #FAF9F6;
             display: flex;
             flex-direction: column;
             align-items: flex-start;

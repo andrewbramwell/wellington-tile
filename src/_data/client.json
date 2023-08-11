@@ -1,15 +1,16 @@
 {
-	"name": "Code Stitch Web Designs",
-	"email": "help@codestitch.app",
+	"name": "Wellington Tile Restoration",
+	"email": "help@wellingtontilerestoration.co.nz",
 	"phoneForTel": "555-779-4407",
 	"phoneFormatted": "(555) 779-4407",
+	"whatsapp": "https://wa.me/+642108074677",
 	"address": {
 		"lineOne": "First Address Line",
 		"lineTwo": "Second Address Line",
-		"city": "Denver",
-		"state": "CO",
+		"city": "Wellington",
+		"state": "NZ",
 		"zip": "80206",
 		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
 	},
-	"domain": "www.codestitch.app"
+	"domain": "wellingtontilerestorations.co.nz"
 }
