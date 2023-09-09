@@ -15,7 +15,7 @@
             </picture>
             <div class="cs-flex">
                 <span class="cs-header">Call Us Now</span>
-                <a href="tel:555-555-0234" class="cs-link">(555) 555-0234</a>
+                <a href="tel:{{client.phoneForTel}}" class="cs-link">{{client.phoneFormatted}}</a>
             </div>
         </li>
         <li class="cs-item">
@@ -24,7 +24,7 @@
             </picture>
             <div class="cs-flex">
                 <span class="cs-header">Send An Email</span>
-                <a href="mailto:Info@email.com" class="cs-link">Info@email.com</a>
+                <a href="mailto:{{client.email}}" class="cs-link">Click to email</a>
             </div>
         </li>
         <li class="cs-item cs-remove">
